@@ -7,7 +7,7 @@ import csv
 
 # csvpath = os.path.join('Resources', 'Netflix.csv')
 mainpath = os.path.join('Resources', 'election_data.csv')
-output_path = os.path.join('Resources', 'Polling_Results.txt')
+output_path = os.path.join('Resources', 'Polling_Results.csv')
 
 # with open (csvpath) as csvfile:
 with open(mainpath, newline='') as csvfile:
@@ -68,7 +68,7 @@ with open(mainpath, newline='') as csvfile:
         winner_tot = 0 
         winner = "nobody"
         for name in candidate: 
-            csvwriter.writerow([f"{name} has {votes[candidate.index(name)]} votes, for {((votes[candidate.index(name)])/rowcount*100):.3f}%"])
+            csvwriter.writerow([f'{name} has {votes[candidate.index(name)]} votes, for {((votes[candidate.index(name)])/rowcount*100):.3f}%'])
             if votes[candidate.index(name)]>winner_tot:
                 winner = name
                 winner_tot = votes[candidate.index(name)]
